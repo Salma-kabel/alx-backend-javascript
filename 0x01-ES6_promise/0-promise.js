@@ -2,3 +2,4 @@
 function getResponseFromAPI() {
   return new Promise((resolve, reject) => {});
 }
+module.exports = getResponseFromAPI;
