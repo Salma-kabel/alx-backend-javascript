@@ -6,7 +6,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const res = await Promise.allSettled(promise);
   const response = [];
 
-  for (let i = 0; i < res.length; i++) {
+  for (let i = 0; i < res.length; i += 1) {
     if (res[i].status === 'fulfilled') {
       response.push({
         status: res[i].status,
@@ -14,8 +14,8 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
       });
     } else {
       response.push({
-        status:res[i].status,
-        value: `Error: ${fileName} cannot be processed`,
+        status: res[i].status,
+        value: res[i].reason,
       });
     }
   }
