@@ -15,7 +15,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     } else {
       response.push({
         status: res[i].status,
-        value: res[i].reason,
+        value: `Error: ${fileName} cannot be processed`,
       });
     }
   }
