@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   res.set('Content-Type', 'text/plain');
   res.write('This is the list of our students\n');
-  if (fs.existsSync(argv[2])) {
+  try {
     fs.readFile(argv[2], 'utf8', (err, data) => {
       if (err) {
         throw Error('Cannot load the database');
@@ -37,7 +37,9 @@ app.get('/students', (req, res) => {
       });
       res.end();
     });
-  } else { throw new Error('Cannot load the database'); }
+  } catch (err) {
+      res.end(err.message);
+  }
 });
 
 app.listen(1245);
