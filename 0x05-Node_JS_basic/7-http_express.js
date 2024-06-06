@@ -24,7 +24,7 @@ app.get('/students', (req, res) => {
     const newis = [];
     result.forEach((data) => newis.push([data[0], data[3]]));
     const fields = new Set();
-    newis.pop()
+    newis.pop();
     newis.forEach((item) => fields.add(item[1]));
     const final = {};
     fields.forEach((data) => { (final[data] = 0); });
@@ -34,7 +34,6 @@ app.get('/students', (req, res) => {
       const separator = index === Object.keys(final).length - 1 ? '' : '\n';
       res.write(`Number of students in ${data}: ${final[data]}. List: ${newis.filter((n) => n[1] === data).map((n) => n[0]).join(', ')}${separator}`);
     });
-
     res.end();
   });
 });
