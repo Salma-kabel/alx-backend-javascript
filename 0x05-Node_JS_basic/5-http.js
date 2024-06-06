@@ -14,12 +14,12 @@ function countStudents(path, stream) {
     result.forEach((data) => newis.push([data[0], data[3]]));
     const fields = new Set();
     newis.forEach((item) => fields.add(item[1]));
-    const final = {};
-    fields.forEach((data) => { (final[data] = 0); });
-    newis.forEach((data) => { (final[data[1]] += 1); });
+    const final1 = {};
+    fields.forEach((data) => { (final1[data] = 0); });
+    newis.forEach((data) => { (final1[data[1]] += 1); });
     stream.write(`Number of students: ${result.length}\n`);
     const temp = [];
-    Object.keys(final).forEach((data) => temp.push(`Number of students in ${data}: ${final[data]}. List: ${newis.filter((n) => n[1] === data).map((n) => n[0]).join(', ')}\n`));
+    Object.keys(final1).forEach((data) => temp.push(`Number of students in ${data}: ${final1[data]}. List: ${newis.filter((n) => n[1] === data).map((n) => n[0]).join(', ')}\n`));
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < temp.length; i++) {
       if (i === temp.length - 1) {
