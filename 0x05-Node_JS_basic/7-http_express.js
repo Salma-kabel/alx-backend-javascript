@@ -34,7 +34,7 @@ app.get('/students', (req, res) => {
     res.write(`Number of students: ${result.filter((check) => check.length > 3).length}\n`);
     Object.keys(final).forEach((data, index) => {
       const separator = index === Object.keys(final).length - 1 ? '' : '\n';
-      res.write(`Number of students in ${data}: ${final[data]}. List: ${newis.filter((n) => n[1] === data).map((n) => n[0]).join(', ')}${separator}`)
+      res.write(`Number of students in ${data}: ${final[data]}. List: ${newis.filter((n) => n[1] === data).map((n) => n[0]).join(', ')}${separator}`);
     });
     res.end();
   });
