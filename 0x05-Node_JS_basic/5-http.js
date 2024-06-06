@@ -10,7 +10,6 @@ function countStudents(path, stream) {
       result.push(data.split(','));
     });
     result.shift();
-    result.pop(
     const newis = [];
     result.forEach((data) => newis.push([data[0], data[3]]));
     const fields = new Set();
