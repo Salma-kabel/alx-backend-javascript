@@ -16,7 +16,6 @@ app.get('/students', (req, res) => {
     if (err) {
       res.write('Cannot load the database');
       res.end();
-      throw Error('Cannot load the database');
     }
     const result = [];
     data.split('\n').forEach((data) => {
