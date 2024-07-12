@@ -9,29 +9,37 @@ export default class HolbertonCourse {
     return this._name;
   }
 
-  set name(val) {
-    if (typeof val !== 'string') { throw new TypeError('Name must be a string'); }
-    this._name = val;
+  set name(value) {
+    if (typeof value !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
+    this._name = value;
   }
 
   get length() {
     return this._length;
   }
 
-  set length(val) {
-    if (typeof val !== 'number') { throw new TypeError('Length must be a number'); }
-    this._length = val;
+  set length(value) {
+    if (typeof value !== 'number') {
+      throw new TypeError('Length must be a number');
+    }
+    this._length = value;
   }
 
   get students() {
     return this._students;
   }
 
-  set students(val) {
-    if (!Array.isArray(val)) { throw new TypeError('Students must be an array'); }
+  set students(value) {
+    if (!Array.isArray(val)) {
+      throw new TypeError('Students must be an array');
+    }
     // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < val.length; i++) {
-      if (typeof val[i] !== 'string') { throw new TypeError('Students must be an array of strings'); }
+    for (let i = 0; i < value.length; i++) {
+      if (typeof value[i] !== 'string') {
+        throw new TypeError('Students must be an array of strings');
+      }
     }
     this._students = val;
   }
