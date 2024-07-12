@@ -3,6 +3,6 @@ export default function guardrail(mathFunction) {
     res = mathFunction()
     return [res, 'Guardrail was processed'];
   } catch (Error) {
-    return [Error.message, 'Guardrail was processed'];
+    return [`Error: ${Error.message}`, 'Guardrail was processed'];
   }
 }
