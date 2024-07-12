@@ -2,7 +2,7 @@ export default function guardrail(mathFunction) {
   try {
     res = mathFunction()
     return [res, 'Guardrail was processed'];
-  } catch (err) {
-    return [err.message, 'Guardrail was processed'];
+  } catch (Error) {
+    return [Error.message, 'Guardrail was processed'];
   }
 }
