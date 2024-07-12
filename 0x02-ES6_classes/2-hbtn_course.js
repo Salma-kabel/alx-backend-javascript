@@ -32,7 +32,7 @@ export default class HolbertonCourse {
   }
 
   set students(value) {
-    if (!Array.isArray(val)) {
+    if (!Array.isArray(value)) {
       throw new TypeError('Students must be an array');
     }
     // eslint-disable-next-line no-plusplus
@@ -41,6 +41,6 @@ export default class HolbertonCourse {
         throw new TypeError('Students must be an array of strings');
       }
     }
-    this._students = val;
+    this._students = value;
   }
 }
