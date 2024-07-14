@@ -4,6 +4,14 @@ export default class Airport {
     this._code = code;
   }
 
+  get code() {
+    return this._code;
+  }
+
+  set code(value) {
+    this._code = value;
+  }
+
   get [Symbol.toStringTag]() {
     return this.code;
   }
