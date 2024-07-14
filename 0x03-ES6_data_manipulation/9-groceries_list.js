@@ -6,7 +6,6 @@ export default function groceriesList() {
     ['Rice', 1],
     ['Banana', 5],
   ];
-
   const map1 = new Map();
   // eslint-disable-next-line no-unused-vars
   for (const element of list1) {

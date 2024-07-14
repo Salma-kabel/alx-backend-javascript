@@ -1,11 +1,13 @@
 // eslint-disable-next-line consistent-return
 export default function cleanSet(set, startString) {
-  let res = '';
-  if (!startString || !startString.length) return res;
+  if (startString === '' || typeof startString !== 'string') {
+    return '';
+  }
+  const arr = [];
   for (const element of set) {
-    if (element && element.startsWith(startString)) {
-      res += `${element.slice(startString.length)}-`;
+    if (typeof element === 'string' && element.startsWith(startString)) {
+      arr.push(element.slice(startString.length));
     }
   }
-  return res.slice(0, res.length - 1);
+  return arr.join('-');
 }
